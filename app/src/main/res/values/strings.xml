@@ -7,7 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="button_mvp">前往MVP</string>
+    <string name="api_error_msg">请求错误信息</string>
+
+    <string name="button_mvp1">乞丐版MVP</string>
+    <string name="button_mvp2">平民版MVP</string>
     <string name="button_mvp_01">乞丐版MVP</string>
     <string name="button_mvp_02">平明版MVP</string>
     <string name="button_mvp_success">获取数据【成功】</string>

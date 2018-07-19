@@ -9,10 +9,18 @@
     tools:showIn="@layout/app_bar_main">
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/button_mvp"
+        android:id="@+id/button_mvp01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_mvp"
+        android:text="@string/button_mvp1"
         android:textAllCaps="false" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_mvp02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_mvp2"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/button_mvp01" />
 
 </android.support.constraint.ConstraintLayout>

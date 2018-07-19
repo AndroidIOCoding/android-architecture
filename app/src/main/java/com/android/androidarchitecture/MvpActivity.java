@@ -3,7 +3,6 @@ package com.android.androidarchitecture;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.button.MaterialButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
@@ -12,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import com.android.androidarchitecture.Presenter.MvpPresenter;
+import com.android.androidarchitecture.Presenter.Presenter;
 import com.android.androidarchitecture.View.MvpView;
 
 /**
@@ -22,10 +22,10 @@ import com.android.androidarchitecture.View.MvpView;
  */
 public class MvpActivity extends AppCompatActivity implements View.OnClickListener, MvpView {
 
-
     private MvpPresenter mPresenter;
     private ProgressDialog mProgressDialog;
     private AutoCompleteTextView mTextLabel;
+    private Presenter mPresenter1;
 
     public static void goMvpActivity(Context context) {
         Intent intent = new Intent(context, MvpActivity.class);
@@ -56,22 +56,26 @@ public class MvpActivity extends AppCompatActivity implements View.OnClickListen
         mProgressDialog.setCancelable(false);
         mProgressDialog.setMessage("正在加载数据");
 
-        mPresenter = new MvpPresenter(this);
+//        mPresenter = new MvpPresenter(this);
+
+        mPresenter1 = new Presenter();
+        mPresenter1.attachView(this);
+
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_success:
-                mPresenter.getData("normal");
+                mPresenter1.getData("normal");
                 break;
 
             case R.id.button_failure:
-                mPresenter.getData("failure");
+                mPresenter1.getData("failure");
                 break;
 
             case R.id.button_error:
-                mPresenter.getData("error");
+                mPresenter1.getData("error");
                 break;
 
             default:
@@ -108,5 +112,11 @@ public class MvpActivity extends AppCompatActivity implements View.OnClickListen
     public void showErrorMessage() {
         Toast.makeText(this, "网络请求数据出现异常", Toast.LENGTH_SHORT).show();
         mTextLabel.setText("网络请求数据出现异常");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter1.detachView();
     }
 }

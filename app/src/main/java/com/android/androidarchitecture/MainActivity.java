@@ -48,8 +48,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initMainView() {
-        AppCompatButton button_mvp = findViewById(R.id.button_mvp);
-        button_mvp.setOnClickListener(this);
+        AppCompatButton button_mvp01 = findViewById(R.id.button_mvp01);
+        AppCompatButton button_mvp02 = findViewById(R.id.button_mvp02);
+        button_mvp01.setOnClickListener(this);
+        button_mvp02.setOnClickListener(this);
     }
 
     @Override
@@ -112,8 +114,13 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button_mvp:
+            case R.id.button_mvp01:
                 MvpActivity.goMvpActivity(MainActivity.this);
+
+                break;
+
+            case R.id.button_mvp02:
+                NormalMvpActivity.goNormalMvpActivity(MainActivity.this);
 
                 break;
 
