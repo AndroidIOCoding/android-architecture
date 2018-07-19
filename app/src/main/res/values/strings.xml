@@ -6,4 +6,13 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string name="button_mvp">前往MVP</string>
+    <string name="button_mvp_01">乞丐版MVP</string>
+    <string name="button_mvp_02">平明版MVP</string>
+    <string name="button_mvp_success">获取数据【成功】</string>
+    <string name="button_mvp_failure">获取数据【失败】</string>
+    <string name="button_mvp_error">获取数据【错误】</string>
+
+
 </resources>
