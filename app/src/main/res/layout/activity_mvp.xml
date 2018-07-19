@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MvpActivity">
+
+    <AutoCompleteTextView
+        android:id="@+id/text_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="LabelFor" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/button_mvp_success"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/text_label" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_failure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_mvp_failure"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/button_success" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_mvp_error"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/button_failure" />
+
+</android.support.constraint.ConstraintLayout>
