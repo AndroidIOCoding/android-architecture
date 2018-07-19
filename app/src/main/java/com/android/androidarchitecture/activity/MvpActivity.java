@@ -1,4 +1,4 @@
-package com.android.androidarchitecture;
+package com.android.androidarchitecture.activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -10,15 +10,16 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import com.android.androidarchitecture.Presenter.MvpPresenter;
-import com.android.androidarchitecture.Presenter.Presenter;
-import com.android.androidarchitecture.View.MvpView;
+import com.android.androidarchitecture.presenter.MvpPresenter;
+import com.android.androidarchitecture.presenter.Presenter;
+import com.android.androidarchitecture.R;
+import com.android.androidarchitecture.view.MvpView;
 
 /**
  * FileName: MvpActivity
  * Author: YuXin
  * Date: 2018/07/19 13:28
- * Describe:
+ * Describe: 乞丐版MVP的Activity
  */
 public class MvpActivity extends AppCompatActivity implements View.OnClickListener, MvpView {
 

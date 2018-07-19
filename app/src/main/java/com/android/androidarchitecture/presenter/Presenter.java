@@ -1,8 +1,8 @@
-package com.android.androidarchitecture.Presenter;
+package com.android.androidarchitecture.presenter;
 
-import com.android.androidarchitecture.Callback.MvpCallback;
-import com.android.androidarchitecture.Model.MvpModel;
-import com.android.androidarchitecture.View.MvpView;
+import com.android.androidarchitecture.callback.MvpCallback;
+import com.android.androidarchitecture.model.MvpModel;
+import com.android.androidarchitecture.view.MvpView;
 
 /**
  * FileName: Presenter

@@ -1,4 +1,4 @@
-package com.android.androidarchitecture;
+package com.android.androidarchitecture.activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -7,7 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.android.androidarchitecture.View.BaseView;
+import com.android.androidarchitecture.R;
+import com.android.androidarchitecture.view.BaseView;
 
 /**
  * FileName: BaseActivity

@@ -1,8 +1,8 @@
-package com.android.androidarchitecture.Model;
+package com.android.androidarchitecture.model;
 
 import android.os.Handler;
 
-import com.android.androidarchitecture.Callback.MvpCallback;
+import com.android.androidarchitecture.callback.MvpCallback;
 
 
 /**

@@ -1,16 +1,16 @@
-package com.android.androidarchitecture.Presenter;
+package com.android.androidarchitecture.presenter;
 
-import com.android.androidarchitecture.Callback.BaseCallback;
-import com.android.androidarchitecture.Model.MvpModel1;
-import com.android.androidarchitecture.View.MvpView1;
+import com.android.androidarchitecture.callback.BaseCallback;
+import com.android.androidarchitecture.model.MvpModel1;
+import com.android.androidarchitecture.view.MvpView1;
 
 /**
- * FileName: MvpPresneter1
+ * FileName: MvpPresenter1
  * Author: YuXin
  * Date: 2018/7/19 15:45
  * Describe: ${Describe}
  */
-public class MvpPresneter1 extends BasePresenter<MvpView1> {
+public class MvpPresenter1 extends BasePresenter<MvpView1> {
 
     public void getData(String params) {
 

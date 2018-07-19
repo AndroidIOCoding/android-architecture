@@ -1,4 +1,4 @@
-package com.android.androidarchitecture;
+package com.android.androidarchitecture.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,13 +7,20 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 
-import com.android.androidarchitecture.Presenter.MvpPresneter1;
-import com.android.androidarchitecture.View.MvpView1;
+import com.android.androidarchitecture.presenter.MvpPresenter1;
+import com.android.androidarchitecture.R;
+import com.android.androidarchitecture.view.MvpView1;
 
+/**
+ * FileName: NormalMvpActivity
+ * Author: YuXin
+ * Date: 2018/07/19
+ * Describe: 平民版MVP的Activity
+ */
 public class NormalMvpActivity extends BaseActivity implements View.OnClickListener, MvpView1 {
 
     private AutoCompleteTextView mTextView;
-    private MvpPresneter1 mMvpPresneter;
+    private MvpPresenter1 mMvpPresenter;
 
     public static void goNormalMvpActivity(Context context) {
         Intent intent = new Intent(context, NormalMvpActivity.class);
@@ -37,23 +44,23 @@ public class NormalMvpActivity extends BaseActivity implements View.OnClickListe
         button_failure.setOnClickListener(this);
         button_error.setOnClickListener(this);
 
-        mMvpPresneter = new MvpPresneter1();
-        mMvpPresneter.attachedVIew(this);
+        mMvpPresenter = new MvpPresenter1();
+        mMvpPresenter.attachedVIew(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_success:
-                mMvpPresneter.getData("normal");
+                mMvpPresenter.getData("normal");
                 break;
 
             case R.id.button_failure:
-                mMvpPresneter.getData("failure");
+                mMvpPresenter.getData("failure");
                 break;
 
             case R.id.button_error:
-                mMvpPresneter.getData("error");
+                mMvpPresenter.getData("error");
                 break;
 
             default:
@@ -69,6 +76,6 @@ public class NormalMvpActivity extends BaseActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mMvpPresneter.detachView();
+        mMvpPresenter.detachView();
     }
 }

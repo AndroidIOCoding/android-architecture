@@ -1,6 +1,6 @@
-package com.android.androidarchitecture.Presenter;
+package com.android.androidarchitecture.presenter;
 
-import com.android.androidarchitecture.View.BaseView;
+import com.android.androidarchitecture.view.BaseView;
 
 /**
  * FileName: BasePresenter

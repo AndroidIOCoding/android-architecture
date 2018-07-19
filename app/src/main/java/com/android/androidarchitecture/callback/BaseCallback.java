@@ -1,4 +1,4 @@
-package com.android.androidarchitecture.Callback;
+package com.android.androidarchitecture.callback;
 
 /**
  * FileName: BaseCallback
