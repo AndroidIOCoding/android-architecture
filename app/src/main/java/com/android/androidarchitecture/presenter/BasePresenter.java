@@ -12,7 +12,7 @@ public class BasePresenter<V extends BaseView> {
 
     private V mvpView;
 
-    public void attachedVIew(V mvpView) {
+    public void attachedView(V mvpView) {
         this.mvpView = mvpView;
     }
 

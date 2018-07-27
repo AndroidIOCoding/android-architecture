@@ -45,7 +45,7 @@ public class NormalMvpActivity extends BaseActivity implements View.OnClickListe
         button_error.setOnClickListener(this);
 
         mMvpPresenter = new MvpPresenter1();
-        mMvpPresenter.attachedVIew(this);
+        mMvpPresenter.attachedView(this);
     }
 
     @Override

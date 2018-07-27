@@ -17,6 +17,9 @@ import android.view.MenuItem;
 
 import com.android.androidarchitecture.R;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
