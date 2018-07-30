@@ -31,4 +31,12 @@
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/button_mvp02" />
 
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_mvp04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_mvp4"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/button_mvp03" />
+
 </android.support.constraint.ConstraintLayout>

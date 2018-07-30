@@ -12,6 +12,7 @@
     <string name="button_mvp1">乞丐版MVP</string>
     <string name="button_mvp2">平民版MVP</string>
     <string name="button_mvp3">平民版MVP(带Fragment)</string>
+    <string name="button_mvp4">时尚版MVP</string>
     <string name="button_mvp_01">乞丐版MVP</string>
     <string name="button_mvp_02">平明版MVP</string>
     <string name="button_mvp_success">获取数据【成功】</string>

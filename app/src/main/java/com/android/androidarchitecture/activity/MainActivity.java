@@ -54,9 +54,11 @@ public class MainActivity extends AppCompatActivity
         AppCompatButton button_mvp01 = findViewById(R.id.button_mvp01);
         AppCompatButton button_mvp02 = findViewById(R.id.button_mvp02);
         AppCompatButton button_mvp03 = findViewById(R.id.button_mvp03);
+        AppCompatButton button_mvp04 = findViewById(R.id.button_mvp04);
         button_mvp01.setOnClickListener(this);
         button_mvp02.setOnClickListener(this);
         button_mvp03.setOnClickListener(this);
+        button_mvp04.setOnClickListener(this);
     }
 
     @Override
@@ -129,6 +131,10 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.button_mvp03:
                 BaseFragmentActivity.goBaseFragmentActivity(MainActivity.this);
+                break;
+
+            case R.id.button_mvp04:
+                FashionMvpActivity.goFashionMvpActivity(MainActivity.this);
                 break;
 
             default:
