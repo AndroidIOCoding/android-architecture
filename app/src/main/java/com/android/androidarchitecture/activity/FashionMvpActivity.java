@@ -1,40 +1,39 @@
-package com.android.androidarchitecture;
+package com.android.androidarchitecture.activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
 
-import com.android.androidarchitecture.Presenter.MvpPresenter;
-import com.android.androidarchitecture.Presenter.Presenter;
-import com.android.androidarchitecture.View.MvpView;
+import com.android.androidarchitecture.R;
+import com.android.androidarchitecture.presenter.FashionMvpPresenter;
+import com.android.androidarchitecture.view.MvpView1;
 
 /**
- * FileName: MvpActivity
+ * FileName: FashionMvpActivity
  * Author: YuXin
- * Date: 2018/07/19 13:28
- * Describe:
+ * Date: 2018/7/30 17:32
+ * Describe: ${Describe}
  */
-public class MvpActivity extends AppCompatActivity implements View.OnClickListener, MvpView {
+public class FashionMvpActivity extends BaseActivity implements View.OnClickListener, MvpView1 {
 
-    private MvpPresenter mPresenter;
     private ProgressDialog mProgressDialog;
     private AutoCompleteTextView mTextLabel;
-    private Presenter mPresenter1;
+    private FashionMvpPresenter mFashionMvpPresenter;
 
-    public static void goMvpActivity(Context context) {
-        Intent intent = new Intent(context, MvpActivity.class);
+    public static void goFashionMvpActivity(Context context) {
+        Intent intent = new Intent(context, FashionMvpActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvp);
         initView();
@@ -56,44 +55,27 @@ public class MvpActivity extends AppCompatActivity implements View.OnClickListen
         mProgressDialog.setCancelable(false);
         mProgressDialog.setMessage("正在加载数据");
 
-//        mPresenter = new MvpPresenter(this);
-
-        mPresenter1 = new Presenter();
-        mPresenter1.attachView(this);
-
+        mFashionMvpPresenter = new FashionMvpPresenter();
+        mFashionMvpPresenter.attachedView(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_success:
-                mPresenter1.getData("normal");
+                mFashionMvpPresenter.getData("normal");
                 break;
 
             case R.id.button_failure:
-                mPresenter1.getData("failure");
+                mFashionMvpPresenter.getData("failure");
                 break;
 
             case R.id.button_error:
-                mPresenter1.getData("error");
+                mFashionMvpPresenter.getData("error");
                 break;
 
             default:
                 break;
-        }
-    }
-
-    @Override
-    public void showLoading() {
-        if (!mProgressDialog.isShowing()) {
-            mProgressDialog.show();
-        }
-    }
-
-    @Override
-    public void hideLoading() {
-        if (mProgressDialog.isShowing()) {
-            mProgressDialog.dismiss();
         }
     }
 
@@ -103,20 +85,8 @@ public class MvpActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     @Override
-    public void showFailureMessage(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-        mTextLabel.setText(msg);
-    }
-
-    @Override
-    public void showErrorMessage() {
-        Toast.makeText(this, "网络请求数据出现异常", Toast.LENGTH_SHORT).show();
-        mTextLabel.setText("网络请求数据出现异常");
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPresenter1.detachView();
+        mFashionMvpPresenter.detachView();
     }
 }

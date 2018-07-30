@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
     <android.support.v7.widget.AppCompatButton
@@ -22,5 +22,21 @@
         android:text="@string/button_mvp2"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/button_mvp01" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_mvp03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_mvp3"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/button_mvp02" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_mvp04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_mvp4"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/button_mvp03" />
 
 </android.support.constraint.ConstraintLayout>

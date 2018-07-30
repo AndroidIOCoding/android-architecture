@@ -1,6 +1,6 @@
-package com.android.androidarchitecture.Presenter;
+package com.android.androidarchitecture.presenter;
 
-import com.android.androidarchitecture.View.BaseView;
+import com.android.androidarchitecture.view.BaseView;
 
 /**
  * FileName: BasePresenter
@@ -12,7 +12,7 @@ public class BasePresenter<V extends BaseView> {
 
     private V mvpView;
 
-    public void attachedVIew(V mvpView) {
+    public void attachedView(V mvpView) {
         this.mvpView = mvpView;
     }
 

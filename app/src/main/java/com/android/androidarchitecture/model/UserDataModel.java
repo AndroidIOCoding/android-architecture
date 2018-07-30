@@ -1,26 +1,25 @@
-package com.android.androidarchitecture.Model;
+package com.android.androidarchitecture.model;
 
 import android.os.Handler;
 
-import com.android.androidarchitecture.Callback.BaseCallback;
+import com.android.androidarchitecture.callback.BaseCallback;
 
 /**
- * FileName: MvpModel1
+ * FileName: UserDataModel
  * Author: YuXin
- * Date: 2018/7/19 15:52
+ * Date: 2018/7/30 17:07
  * Describe: ${Describe}
  */
-public class MvpModel1 {
-
-    public static void getNetData(final String param, final BaseCallback<String> callback) {
+public class UserDataModel extends BaseModel<String> {
+    @Override
+    public void execute(final BaseCallback<String> callback) {
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                switch (param) {
+                switch (mParams[0]) {
                     case "normal":
-                        callback.onSuccess("根据请求" + param + "的请求网络数据成功");
+                        callback.onSuccess("根据参数" + mParams[0] + "的请求数据成功");
                         break;
 
                     case "failure":

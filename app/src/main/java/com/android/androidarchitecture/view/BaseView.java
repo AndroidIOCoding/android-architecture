@@ -1,4 +1,4 @@
-package com.android.androidarchitecture.View;
+package com.android.androidarchitecture.view;
 
 import android.content.Context;
 

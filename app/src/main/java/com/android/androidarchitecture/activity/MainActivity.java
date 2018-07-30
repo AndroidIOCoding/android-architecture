@@ -1,9 +1,7 @@
-package com.android.androidarchitecture;
+package com.android.androidarchitecture.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.button.MaterialButton;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.AppCompatButton;
@@ -17,6 +15,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.android.androidarchitecture.R;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -24,10 +27,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,12 +39,12 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         initMainView();
@@ -50,13 +53,17 @@ public class MainActivity extends AppCompatActivity
     private void initMainView() {
         AppCompatButton button_mvp01 = findViewById(R.id.button_mvp01);
         AppCompatButton button_mvp02 = findViewById(R.id.button_mvp02);
+        AppCompatButton button_mvp03 = findViewById(R.id.button_mvp03);
+        AppCompatButton button_mvp04 = findViewById(R.id.button_mvp04);
         button_mvp01.setOnClickListener(this);
         button_mvp02.setOnClickListener(this);
+        button_mvp03.setOnClickListener(this);
+        button_mvp04.setOnClickListener(this);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -116,12 +123,18 @@ public class MainActivity extends AppCompatActivity
         switch (view.getId()) {
             case R.id.button_mvp01:
                 MvpActivity.goMvpActivity(MainActivity.this);
-
                 break;
 
             case R.id.button_mvp02:
                 NormalMvpActivity.goNormalMvpActivity(MainActivity.this);
+                break;
 
+            case R.id.button_mvp03:
+                BaseFragmentActivity.goBaseFragmentActivity(MainActivity.this);
+                break;
+
+            case R.id.button_mvp04:
+                FashionMvpActivity.goFashionMvpActivity(MainActivity.this);
                 break;
 
             default:
